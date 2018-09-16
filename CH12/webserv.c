@@ -11,6 +11,8 @@
 #include	<sys/types.h>
 #include	<sys/stat.h>
 #include	<string.h>
+#include	<stdlib.h>
+#include	<unistd.h>
 
 main(int ac, char *av[])
 {
