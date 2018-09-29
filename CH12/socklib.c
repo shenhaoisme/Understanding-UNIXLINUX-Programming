@@ -12,7 +12,22 @@
  *					returns a connected socket
  *					or -1 if error
  */ 
+/*
+struct hostent	
+{		
+char *h_name;         //正式主机名		
+char **h_aliases;     //主机别名		
+int h_addrtype;       //主机IP地址类型：IPV4-AF_INET		
+int h_length;		  //主机IP地址字节长度，对于IPv4是四字节，即32位		
+char **h_addr_list;	  //主机的IP地址列表	
+};		
 
+#define h_addr h_addr_list[0]   //保存的是IP地址
+
+很多例子运行程序崩溃，看样子应该是返回ip 地址才对！
+
+
+*/
 #include	<stdio.h>
 #include	<unistd.h>
 #include	<sys/types.h>
