@@ -145,6 +145,7 @@ isadir(char *f)
 not_exist(char *f)
 {
 	struct stat info;
+	//路径下该文件的信息储存在info这个结构体中，这里主要判断该文件是否存在
 	return( stat(f,&info) == -1 );
 }
 
@@ -153,6 +154,7 @@ do_ls(char *dir, int fd)
 	FILE	*fp ;
 
 	fp = fdopen(fd,"w");
+	//header() 函数向客户端发送原始的 HTTP 报头。
 	header(fp, "text/plain");
 	fprintf(fp,"\r\n");
 	fflush(fp);
