@@ -7,6 +7,18 @@
  *	uses readdir() to get info about each thing
  *
  *      bug: prints an empty string if run from "/"
+ 
+ 
+ 最后，总结一下，想要获取某目录下（比如a目下）b文件的详细信息，我们应该怎样做？
+
+首先，我们使用opendir函数打开目录a，返回指向目录a的DIR结构体c。
+
+接着，我们调用readdir( c)函数读取目录a下所有文件（包括目录），返回指向目录a下所有文件的dirent结构体d。
+
+然后，我们遍历d，调用stat（d->name,stat *e）来获取每个文件的详细信息，存储在stat结构体e中。
+
+总体就是这样一种逐步细化的过程，在这一过程中，三种结构体扮演着不同的角色。
+
  **/
 #include	<stdio.h>
 #include	<sys/types.h>
