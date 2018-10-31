@@ -52,6 +52,10 @@ get_response( char *question , int maxtries)
 }
 /*
  *  skip over non-legal chars and return y,Y,n,N or EOF
+ me:strchr(const char * str,char c);
+ if can find c in str,return c's position
+ else return NULL
+ 
  */
 get_ok_char()
 {
